@@ -23,6 +23,8 @@ function FullContentPage(){
           tags: localProps.state.tags
         }})
     }
+  
+  
 
   useEffect(() => {
   fetch("https://fswd-wp.devnss.com/wp-json/wp/v2/comments")
@@ -36,7 +38,7 @@ function FullContentPage(){
       .then((user) => {setAuthorName(user.name)})
     })
     .catch((err) => {console.log("failed to test")})
-  })
+  }, [])
 
     return(
       <div>
