@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useEffect, useState } from "react";
 import HomePage from "./components/homePage";
 import TagCategory from "./components/tagCategory"
 import Author from './components/author';
