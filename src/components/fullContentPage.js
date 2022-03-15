@@ -32,7 +32,7 @@ function FullContentPage(){
       .then((user) => {setAuthorName(user.name)})
     })
     .catch((err) => {console.log("failed to test")})
-  }, [])
+  })
 
   console.log(localProps.state.post)
   console.log(authorname)
