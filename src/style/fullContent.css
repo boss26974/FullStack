@@ -1,0 +1,15 @@
+#fullContent{
+    margin-top: 10vh;
+}
+#fullContentTitle{
+    margin-bottom: 5vh;
+}
+#allComment{
+    margin-top: 5vh;
+    padding: 30px;
+}
+#comment{
+    margin-bottom: 3vh;
+    border: 1px solid;
+    border-radius: 10px;
+}
