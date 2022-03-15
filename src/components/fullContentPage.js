@@ -38,6 +38,7 @@ function FullContentPage(){
       .then((user) => {setAuthorName(user.name)})
     })
     .catch((err) => {console.log("failed to test")})
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
     return(
