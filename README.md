@@ -5,4 +5,4 @@
 4. พิมพ์คำสั่ง npm run start
 
 # Deploy Link
-[https://relaxed-panini-3df033.netlify.app](click here)
+https://relaxed-panini-3df033.netlify.app
