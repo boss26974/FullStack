@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PostCard from "./postCard";
-import {Container, Row, Col, Form} from "react-bootstrap"
+import {Container, Row, Col} from "react-bootstrap"
 import "../style/tagCategory.css"
 
 function PostContent() {
