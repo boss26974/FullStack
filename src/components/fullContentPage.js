@@ -17,7 +17,11 @@ function FullContentPage(){
 
   let navigate = useNavigate();
     const routeChange = () =>{ 
-        navigate('/addComment', {state: {post: localProps.state.post}})
+        navigate('/addComment', {state: {
+          post: localProps.state.post, 
+          categories: localProps.state.categories,
+          tags: localProps.state.tags
+        }})
     }
 
   useEffect(() => {
@@ -33,9 +37,6 @@ function FullContentPage(){
     })
     .catch((err) => {console.log("failed to test")})
   })
-
-  console.log(localProps.state.post)
-  console.log(authorname)
 
     return(
       <div>

@@ -2,8 +2,8 @@ import {Container, Row, Col, Card, Button} from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
 function PostCard(props) {
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
+    let navigate = useNavigate();
+    const routeChange = () =>{
         navigate('/full-content', {state: {post : props.post, categories: props.categories, tags: props.tags}})
     }
 

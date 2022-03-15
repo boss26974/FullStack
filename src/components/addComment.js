@@ -9,8 +9,6 @@ function AddComment(){
     const [authorName, setAuthorName] = useState("");
     const [content, setContent] = useState("");
 
-    console.log(localProps.state.post)
-
     const addComment = () => {
     fetch('https://fswd-wp.devnss.com/wp-json/wp/v2/comments', {
         method: 'POST',
@@ -37,7 +35,11 @@ function AddComment(){
 
     const navigate = useNavigate();
     const routeChanged = () => {
-        navigate('/full-content', {state: {post: localProps.state.post}})
+        navigate('/full-content', {state: {
+            post: localProps.state.post, 
+            categories: localProps.state.categories,
+            tags: localProps.state.tags
+          }})
     }
 
     return (
