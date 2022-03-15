@@ -8,6 +8,7 @@ function PostContent() {
     const [allcatagories, setAllCategories] = useState([])
     const [alltags, setAllTags] = useState([])
     const [categorieChoose, setCategoriesChoose] = useState("all")
+    const [tagChoose, setTagChoose] = useState("all")
 
   useEffect(() => {
     fetch("https://fswd-wp.devnss.com/wp-json/wp/v2/posts")
@@ -88,14 +89,31 @@ function PostContent() {
     return result
   }
 
-  const filterCategories = () => {
+  const filterCategories = (array) => {
     let result = [];
+
     if(categorieChoose === "all"){
-      result = allpost
+      result = array
     }
-    else{
-      allpost.map((post) => {
+    if(categorieChoose !== "all"){
+      array.map((post) => {
         let search = post.categories.findIndex(e => parseInt(e) === parseInt(categorieChoose))
+        if(search !== -1){ result.push(post)}
+        return 0;
+      })
+    }
+    return result
+  }
+
+  const filterTags = (array) => {
+    let result = [];
+
+    if(tagChoose === "all"){
+      result = array
+    }
+    if(tagChoose !== "all"){
+      array.map((post) => {
+        let search = post.tags.findIndex(e => parseInt(e) === parseInt(tagChoose))
         if(search !== -1){ result.push(post)}
         return 0;
       })
@@ -120,7 +138,17 @@ function PostContent() {
                 })}
               </Form.Select>
             </Col>
-            {filterCategories().map((post) => {
+            <Col md={12} style={{"marginTop" : "2vh"}}>
+            <Form.Select onChange={e => setTagChoose(e.target.value)}>
+                <option value="all">all Tags</option>
+                {alltags.map((tag) => {
+                  return(
+                    <option key={tag.id} value={tag.id}>{tag.name}</option>
+                  )
+                })}
+              </Form.Select>
+            </Col>
+            {filterTags(filterCategories(allpost)).map((post) => {
               return (
                 <Col md={12} id="postCard" key={post.id}>
                   <PostCard 
